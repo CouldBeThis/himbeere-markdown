@@ -36,6 +36,8 @@ Compared to the original, I added the color `gold` into the pallette and renamed
 
 The styles that apply to markdown have been differentiated instead of re-using the same style over and over for different elements. 
 
+* [here is the diff](https://github.com/CouldBeThis/himbeere-markdown/commit/8139ae3ed0b9b9ce4278b2dccd7af1bdb578c311) comparing the original files to the first (at time of writing, only) version.
+
 ## wish list
 
 I couldn't figure out how to do it but if it was possible it would be nice to style the whole block of text affected by a style. For example the entire heading instead of just the leading `#` or the entire blockquote instead of just `>`. 
