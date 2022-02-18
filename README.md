@@ -46,6 +46,42 @@ Additionally it does not recognize lists very robustly. I like to put a tab (`\t
 
 I am not happy with the exact way the colors are at the moment and plan to work on it as I use it more. 
 
+Found: [the Scintilla Markdown lexer](https://github.com/geany/geany/blob/master/scintilla/lexilla/lexers/LexMarkdown.cxx)
+
+Also found in the Geany [issues](https://github.com/geany/geany/issues/3128): 
+
+> The highlighting only works for the syntactic elements recognised by the lexers in the upstream Lexilla project, so anything extra would have to be added there first. Current elements are listed at https://github.com/ScintillaOrg/lexilla/blob/8d8370261bf8954df0e718e8af7aea96327d3be2/include/LexicalStyles.iface#L1718
+
+which content of the above is:
+
+```
+# Lexical state for SCLEX_MARKDOWN
+lex Markdown=SCLEX_MARKDOWN SCE_MARKDOWN_
+val SCE_MARKDOWN_DEFAULT=0
+val SCE_MARKDOWN_LINE_BEGIN=1
+val SCE_MARKDOWN_STRONG1=2
+val SCE_MARKDOWN_STRONG2=3
+val SCE_MARKDOWN_EM1=4
+val SCE_MARKDOWN_EM2=5
+val SCE_MARKDOWN_HEADER1=6
+val SCE_MARKDOWN_HEADER2=7
+val SCE_MARKDOWN_HEADER3=8
+val SCE_MARKDOWN_HEADER4=9
+val SCE_MARKDOWN_HEADER5=10
+val SCE_MARKDOWN_HEADER6=11
+val SCE_MARKDOWN_PRECHAR=12
+val SCE_MARKDOWN_ULIST_ITEM=13
+val SCE_MARKDOWN_OLIST_ITEM=14
+val SCE_MARKDOWN_BLOCKQUOTE=15
+val SCE_MARKDOWN_STRIKEOUT=16
+val SCE_MARKDOWN_HRULE=17
+val SCE_MARKDOWN_LINK=18
+val SCE_MARKDOWN_CODE=19
+val SCE_MARKDOWN_CODE2=20
+val SCE_MARKDOWN_CODEBK=21
+# Lexical state for SCLEX_TXT2TAGS
+```
+
 I might add extra colorful support for other filetypes I use. 
 
 ## metadata
