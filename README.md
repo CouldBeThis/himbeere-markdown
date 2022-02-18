@@ -82,6 +82,10 @@ val SCE_MARKDOWN_CODEBK=21
 # Lexical state for SCLEX_TXT2TAGS
 ```
 
+So 
+
+--------------------
+
 I might add extra colorful support for other filetypes I use. 
 
 ## metadata
