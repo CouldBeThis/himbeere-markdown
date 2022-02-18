@@ -1,0 +1,23 @@
+*
+
+geany.conf
+ui_toolbar.xml
+geany_socket_microwave__0
+plugins
+keybindings.conf
+templates
+
+filedefs/*
+# exclude only this file from being ignored
+!filedefs/filetypes.markdown
+
+colorschemes/*
+# exclude only this file from being ignored
+colorschemes/himbeere-markdown.conf
+!colorschemes/himbeere.conf
+
+!.gitignore
+
+!README.md
+
+!himbeere-markdown.png
