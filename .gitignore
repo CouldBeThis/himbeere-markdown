@@ -11,9 +11,9 @@ filedefs/*
 # exclude only this file from being ignored
 !filedefs/filetypes.markdown
 
-colorschemes/*
+# colorschemes/*
 # exclude only this file from being ignored
-colorschemes/himbeere-markdown.conf
+!colorschemes/himbeere-markdown.conf
 !colorschemes/himbeere.conf
 
 !.gitignore
