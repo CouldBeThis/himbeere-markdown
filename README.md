@@ -77,13 +77,33 @@ The styles that apply to markdown have been differentiated instead of re-using t
 
 * [here is the diff](https://github.com/CouldBeThis/himbeere-markdown/commit/8139ae3ed0b9b9ce4278b2dccd7af1bdb578c311) comparing the original files to the first (at time of writing, only) version.
 
-## wish list
+## wish list/TODO
+
+ - [ ] Update this task list with correct format
+ 
+ - [ ] Consider renaming repo
+ 
+ - [ ] Consider sharing repo
+
+ - [ ] I am not happy with the exact way the colors are at the moment and plan to work on it as I use it more. Here are `theme.sh` color schemes I like; maybe use a pallette from one of these:
+		```zsh
+		theme.sh horizon-terminal-dark
+		theme.sh atom
+		theme.sh ayu
+		theme.sh frontend-delight
+		theme.sh farin
+		theme.sh cai
+		theme.sh pop
+		theme.sh hardcore
+		theme.sh eighties
+		theme.sh pasque
+		theme.sh tender-dark
+		```
 
  - [ ] I couldn't figure out how to do it but if it was possible it would be nice to style the whole block of text affected by a style. For example the entire heading instead of just the leading `#` or the entire blockquote instead of just `>`. 
 
  - [ ] Additionally it does not recognize lists very robustly. I like to put a tab (`\t`) at the start of my lists but the lexer will not pick it up if you do that. I don't belive either of these are likely solveable in the files I ahve workd on already. 
 
- - [ ] I am not happy with the exact way the colors are at the moment and plan to work on it as I use it more. 
 
 Found: [the Scintilla Markdown lexer](https://github.com/geany/geany/blob/master/scintilla/lexilla/lexers/LexMarkdown.cxx)
 
@@ -123,7 +143,7 @@ val SCE_MARKDOWN_CODEBK=21
 
 --------------------
 
- - [ ] Fix colors for other filetypes I use; presumaby once a bunch of them look OK they all will (?)
+ - [ ] Verify/tune colors for other filetypes I use; presumaby once a bunch of them look OK they all will (?)
  
 	 - [ ] `HTML`
 	 - [ ] `bash`/`shell`
