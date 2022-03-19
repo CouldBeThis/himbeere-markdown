@@ -30,7 +30,7 @@ function Confirm {
 	DateTimeStamp=$(date +"%y%m%d-%H%M%S")
 	echo "▶ DateTimeStamp is	$DateTimeStamp"
 ###	New filename for copied original files
-	BackupFileName=bkup-$DateTimeStamp
+	BackupFileName=$DateTimeStamp-bkup
 	echo "▶ BackupFileName is	$BackupFileName"
 ###	Metadata 
 	ThisScript=$(basename "$0")
@@ -106,15 +106,18 @@ Confirm
 #ln -s $RepoDir/$FileTypeYaml $GeanyConfigDir/$FileTypeYaml
 #ln -s $RepoDir/$ColorSchemes $GeanyConfigDir/$ColorSchemes
 
-mv -n $RepoDir/$FileTypeMarkdown $GeanyConfigDir/$FileTypeMarkdown
-mv -n $RepoDir/$FileTypeYaml $GeanyConfigDir/$FileTypeYaml
-mv -n $RepoDir/$ColorSchemes $GeanyConfigDir/$ColorSchemes
+cp -n $RepoDir/$FileTypeMarkdown $GeanyConfigDir/$FileTypeMarkdown
+cp -n $RepoDir/$FileTypeYaml $GeanyConfigDir/$FileTypeYaml
+cp -n $RepoDir/$ColorSchemes $GeanyConfigDir/$ColorSchemes
 
 echo -e "$Bu\e TThe following text will be appended to all the relevant files If you don't like this, ctrl-C to stop. $Off"
 
 function CommentText {
-	echo " ## ============================= ##
-	##	This file has been customized. See README.md in repo for information.
+	echo "
+	
+	## ===================================================== ##
+	##	This file has been customized. 
+	##	See README.md in repo for information.
 	##	▶ Repo:	$RepoURL 
 	##	▶ Local repo location: $RepoDir 
 	##	▶ Files included: 
@@ -125,22 +128,39 @@ function CommentText {
 	##		● $GeanyConfigDir/$FileTypeMarkdown-$BackupFileName
 	##		● $GeanyConfigDir/$FileTypeYaml-$BackupFileName
 	##		● $GeanyConfigDir/$ColorSchemes-$BackupFileName
-	
- ## ============================= ##" 
+	## ===================================================== ##" 
 }
 
 CommentText
 
 Confirm
 
-#CommentText >> $GeanyConfigDir/$FileTypeMarkdown
-#CommentText >> $GeanyConfigDir/$FileTypeYaml
-#CommentText >> $GeanyConfigDir/$ColorSchemes
+CommentText >> $GeanyConfigDir/$FileTypeMarkdown
+CommentText >> $GeanyConfigDir/$FileTypeYaml
+CommentText >> $GeanyConfigDir/$ColorSchemes
 
-echo "$B Done here!$Off Next you need to:"
+echo "$B Almost Done here! Next you need to:$Off"
 	echo " ▶ If Geany is open, select Tools > Reload Configuration"
 	echo " ▶ In Geany, select View > Change Color Scheme"
-	echo " ▶ "
+
+echo "$B Do you want to get rid of the backup files? $Off
+Will use trash-cli first then give option for rm after in case you don't have that.'
+Files to be deleted:
+	✘ $C$GeanyConfigDir/$FileTypeMarkdown$Bu-$BackupFileName$Off
+	✘ $C$GeanyConfigDir/$FileTypeYaml$Bu-$BackupFileName$Off
+	✘ $C$GeanyConfigDir/$ColorSchemes$Bu-$BackupFileName$Off"
+Confirm
+
+trash $GeanyConfigDir/$FileTypeMarkdown-$BackupFileName
+trash $GeanyConfigDir/$FileTypeYaml-$BackupFileName
+trash $GeanyConfigDir/$ColorSchemes-$BackupFileName
+Confirm
+rm $GeanyConfigDir/$FileTypeMarkdown-$BackupFileName
+rm $GeanyConfigDir/$FileTypeYaml-$BackupFileName
+rm $GeanyConfigDir/$ColorSchemes-$BackupFileName
+
+echo "╳╳╳╳╳╳╳╳╳╳ done ╳╳╳╳╳╳╳╳╳╳"
+
 
 ##reset tabs to default
 tabs -8
