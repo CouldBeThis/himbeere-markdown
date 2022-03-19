@@ -10,6 +10,25 @@ It is based on the theme `Himbeere` which was obtained from the [geany-themes](h
 
 ## install
 
+### install script
+
+There is now an install script. It is not great but should probably work. You may wish to review it prior to running since I could have made some error in not knowing how your system is configured. If so please let me know. 
+
+Clone repo and run `install.sh`:
+
+```zsh
+git clone git@github.com:CouldBeThis/himbeere-markdown.git
+cd himbeere-markdown
+chmod u+x install.sh
+./install.sh
+```
+
+#### updating
+
+pull from the repo directory and re-run the install script; or re-clone and do the same.
+
+### manual
+
 *Please consult the [Geany Theme Documentation](https://github.com/geany/geany-themes) for more detailed instructions.* 
 
 1. Download or clone the repo (or just the 2 files). I don't have any sophisticated way to do that and at this time there is no provision for any updates. Maybe in the future once I am happier with it I will try to figure out a way to do that. 
