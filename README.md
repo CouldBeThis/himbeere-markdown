@@ -1,5 +1,25 @@
 # readme for himbeere-markdown
 
+<!-- to re-generate the TOC, run this from root of repo dir:
+	tools/gh-md-toc --no-backup README.md
+	-->
+	
+<!--ts-->
+* [readme for himbeere-markdown](#readme-for-himbeere-markdown)
+   * [install](#install)
+      * [install script](#install-script)
+         * [updating](#updating)
+      * [manual instally](#manual-instally)
+   * [use](#use)
+   * [changes from the original](#changes-from-the-original)
+   * [wish list](#wish-list)
+      * [ancillary](#ancillary)
+   * [metadata](#metadata)
+
+<!-- Added at: Sat 19 Mar 13:47:04 EDT 2022 -->
+
+<!--te-->
+
 This is a theme for the text editor `Geany`. 
 
 It highlights markdown to make **all** the elements visible as much as I could work out how to do in a cheerful pallette mostly borrowed from the source theme. 
@@ -27,7 +47,7 @@ chmod u+x install.sh
 
 pull from the repo directory and re-run the install script; or re-clone and do the same.
 
-### manual
+### manual instally 
 
 *Please consult the [Geany Theme Documentation](https://github.com/geany/geany-themes) for more detailed instructions.* 
 
@@ -59,11 +79,11 @@ The styles that apply to markdown have been differentiated instead of re-using t
 
 ## wish list
 
-I couldn't figure out how to do it but if it was possible it would be nice to style the whole block of text affected by a style. For example the entire heading instead of just the leading `#` or the entire blockquote instead of just `>`. 
+ - [ ] I couldn't figure out how to do it but if it was possible it would be nice to style the whole block of text affected by a style. For example the entire heading instead of just the leading `#` or the entire blockquote instead of just `>`. 
 
-Additionally it does not recognize lists very robustly. I like to put a tab (`\t`) at the start of my lists but the lexer will not pick it up if you do that. I don't belive either of these are likely solveable in the files I ahve workd on already. 
+ - [ ] Additionally it does not recognize lists very robustly. I like to put a tab (`\t`) at the start of my lists but the lexer will not pick it up if you do that. I don't belive either of these are likely solveable in the files I ahve workd on already. 
 
-I am not happy with the exact way the colors are at the moment and plan to work on it as I use it more. 
+ - [ ] I am not happy with the exact way the colors are at the moment and plan to work on it as I use it more. 
 
 Found: [the Scintilla Markdown lexer](https://github.com/geany/geany/blob/master/scintilla/lexilla/lexers/LexMarkdown.cxx)
 
@@ -101,11 +121,26 @@ val SCE_MARKDOWN_CODEBK=21
 # Lexical state for SCLEX_TXT2TAGS
 ```
 
-So 
-
 --------------------
 
-I might add extra colorful support for other filetypes I use. 
+ - [ ] Fix colors for other filetypes I use; presumaby once a bunch of them look OK they all will (?)
+ 
+	 - [ ] `HTML`
+	 - [ ] `bash`/`shell`
+	 - [ ] `nanorc`
+	 - [ ] `conf`
+	 - [ ] `YAML` (moreso)
+	 - [ ] `Genie` (I presume that is the genie config files?)
+	 - [ ] `Python`
+	 - [ ] `json`
+	 - [ ] `diff`
+	 - [ ] `css`
+	 - [ ] question: would it be plausible to make combo formats for files such as SSG template files where for example `markdown`, `yaml`, `html` and `go` are combined in a single document?
+	 
+	 ### ancillary
+	 
+	 
+	 - [ ] look into the geany markdown plugin, is it something I could improve or too complicated?
 
 ## metadata
 
